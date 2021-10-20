@@ -1,0 +1,200 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~#1 Работа за сентябрь 
+
+1 задание
+
+SELECT * FROM billing WHERE payer_email='vasya@mail.com'
+
+2 задание
+
+USE billing;
+
+INSERT INTO billing(payer_email) VALUES ('pasha@mail.com');
+
+INSERT INTO billing(recipient_email) VALUES ('katya@mail.com');
+
+INSERT INTO billing(sum) VALUES ('300.00');
+
+INSERT INTO billing(currency) VALUES ('EUR');
+
+INSERT INTO billing(billing_date) VALUES ('14.02.2016');
+
+INSERT INTO billing(comment) VALUES ('Valentines day present');
+
+SELECT * FROM billing WHERE SUM=300;
+
+3 задание
+
+USE billing;
+
+UPDATE billing
+
+SET
+
+payer_email='igor@mail.com'
+
+WHERE payer_email='alex@mail.com';
+
+4 задание
+
+USE billing;
+
+DELETE FROM billing
+
+WHERE payer_email= '' or recipient_email='';
+
+5 Задание
+
+USE project_simple;
+
+SELECT count(project_name) FROM project
+
+6 задание
+
+USE store_simple;
+
+SELECT category, count(category) FROM store GROUP BY category
+
+7 задание
+
+USE store_simple;
+
+SELECT category, count(category), Max(price) FROM store
+
+GROUP BY price
+
+ORDER by price desc
+
+LIMIT 5;
+
+8 задание
+
+USE project_simple;
+
+SELECT count(project_name), sum(budget), avg(datediff(project_start, project_finish)) FROM project
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ Задание за 29.09
+
+USE store;
+
+SELECT category.name AS category_name , good.name AS good_name FROM category_has_good as chg
+
+INNER JOIN good
+
+ON good.id = chg.good_id
+
+INNER JOIN category
+
+ON category.id = chg.category_id
+
+ORDER BY good_name
+
+#2 
+// Изменил F_name and L_name на name and surname, чтобы было лаконично. Не бейте )
+
+USE store;
+
+SELECT first_name AS name, last_name AS surname, count(number) AS N_S_N FROM client AS c
+
+INNER JOIN sale ON c.id = sale.client_id
+
+INNER JOIN status ON sale.status_id = status.id
+
+WHERE status.name = "new"
+
+GROUP BY c.first_name, c.last_name;
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Задание за 04.10
+
+USE store;
+
+SELECT good.name AS good_name, category.name AS category_name FROM good
+
+LEFT JOIN category
+
+ON category.id = good.id
+
+}}}}}}}
+
+USE store;
+SELECT cat.name, good.name FROM category AS cat
+LEFT JOIN category_has_good
+ON cat.id = category_has_good.category_id
+LEFT JOIN good
+ON good.id = category_has_good.good_id
+UNION ALL
+SELECT cat.name, good.name FROM category AS cat
+RIGHT JOIN category_has_good
+ON cat.id = category_has_good.good_id
+RIGHT JOIN good
+ON good.id = category_has_good.good_id
+
+}}}}}}
+
+USE store;
+
+SELECT source.name, sale_sum FROM client
+
+LEFT JOIN sale
+
+ON sale.id = client.id
+
+INNER JOIN source
+
+ON sale.id = source.id
+
+~~~~~~~~~~~~~~~~~~~~~~~~Задание за 11.10
+SELECT dept.name, users.name FROM departments AS dept
+
+LEFT JOIN users
+
+ON users.d_id = dept.id
+
+WHERE users.name is NULL;
+
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+
+USE psk;
+
+SELECT dept.name, COUNT(d_id) FROM departments AS dept
+
+INNER JOIN users
+
+ON dept.id = users.d_id
+
+WHERE d_id > 1;
+
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+
+SELECT users.name, dept.name FROM departments AS dept
+
+RIGHT JOIN users
+
+ON dept.id = users.d_id
+
+WHERE dept.name is NULL;
+
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+
+~~~~~~~~Задание за 18.10
+#1
+
+create table book (book_id int primary key auto_increment,
+
+title varchar(50), author varchar(30),
+
+price decimal(8,2),
+
+amount int);
+
+#2
+
+insert into book (book_id, title, author, price, amount) 
+values (1, "Мастер и Маргарита", "Булгаков М.А.", 670.99, 3)
+
+#3
+
+insert into book (book_id, title, author, price, amount) values (2, "Белая гвардия", "Булгаков М.А.",540.50, 5);
+
+insert into book (book_id, title, author, price, amount) values (3, "Идиот", "Достоевский Ф.М.",460.00, 10);
+
+insert into book (book_id, title, author, price, amount) values (4, "Братья Карамазовы", "Достоевский Ф.М.",799.01, 2);
