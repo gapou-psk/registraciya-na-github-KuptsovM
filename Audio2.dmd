@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Audio2" id="01ED86C5-2A82-DE87-7A77-3BDA4D2F1C8D" version="3.5">
-<createdBy>jkassel</createdBy>
-<createdTime>2021-10-27 11:29:18 UTC</createdTime>
-<ownerDesignName>Audio</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>01ED86C5-2A82-DE87-7A77-3BDA4D2F1C8D</designId>
-</OSDM_Design>
