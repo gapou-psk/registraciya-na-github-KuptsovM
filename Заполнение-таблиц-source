@@ -1,0 +1,28 @@
+USE audio;
+INCERT INTO AUTHOR ('ID','name','surname','age','Genre','Language','Place_live')
+VALUES ('1','Georg','Pipos','34','English','New York'),
+('2','Daniil','Fadeev','17','Russian','Perevoz'),
+('3','Robbert','Harrington','26','English','Boston'),
+('4','Turrel','Maggester','22','English','Los Angeles'),
+('5','Ira','Repova','43','Russian','Novgorod')
+
+INCERT INTO TRACK ('ID','name','duration','Genre','Size','Date_add')
+VALUES ('1','Lonely sun','4:02','Lyrics','3.7MB','2020.03.01'),
+('2','Young work','2:54','Rock','2.1MB','2019.01.25'),
+('3','Googly day','3:02','Djaz','3.3MB','2015.10.03'),
+('4','PAIN','3:43','Lyrics','4.0MB','2018.02.01'),
+('5','Reason','2:30','Rock','3.6','2014.09.03')
+
+
+INCERT INTO USER ('ID','username','password','email','Country')
+VALUES ('1','Login123','666777666','Horny@gmail.com','3.7MB','Germany'),
+('2','HornyBaby','4545454545','PeakyBlinders@rambler.com','Gt. Britan'),
+('3','LyricsKingdom','geggeggeg321','Voidloop@gmail.com','Spain')
+
+INCERT INTO ALBUM ('ID','album_name','DATE_CREATE')
+VALUES ('1','Horny_album','2021.01.23'),
+('2','HornyBaby','2021.03.06'),
+('3','LyricsKingdom','2021.04.22')
+
+
+
